@@ -1,0 +1,21 @@
+go_version: 1.7
+
+server:
+  addr: 127.0.0.1
+  port: 8090
+
+db:
+  db_source: root:root123@tcp(127.0.0.1:3306)/adx_api?parseTime=true&charset=utf8&loc=Local
+
+statis:
+  item_length: 10000
+  data_length: 10
+  time_format: 2006-01-02 15:04:05
+
+http_client:
+  time_out: 700
+  max_idle_conns_per_host: 50
+
+cache:
+  redis_source: 127.0.0.1:6379
+  
