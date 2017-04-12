@@ -1,0 +1,32 @@
+language: go
+
+sudo: required
+dist: trusty
+
+go:
+  - 1.7.1
+
+addons:
+  apt:
+    packages:
+    - mysql-server-5.6
+    - mysql-client-core-5.6
+    - mysql-client-5.6
+
+services:
+  - redis-server
+
+install:
+  - true
+
+before_script:
+  - mysql -uroot -e 'create database test;'
+  - mysql -uroot test < test/test.sql
+  - mkdir /tmp/logs
+
+script:
+  go test ./... -v
+
+notifications:
+  email: 923048755@qq.com
+  webhooks: https://hook.bearychat.com/=bw9Z8/travis/3041ad525fc3b35c3c2543c5402a60a2
