@@ -1,4 +1,4 @@
-# goproject
+# Goproject
 
 A basic structure with golang to develop a api project
 
