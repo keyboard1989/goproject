@@ -1,5 +1,7 @@
 # Goproject
 
+[![Build Status](https://api.travis-ci.org/keyboard1989/goproject.svg?branch=master)](https://travis-ci.org/keyboard1989/goproject)
+
 A basic structure with golang to develop a api project
 
 # Usage
