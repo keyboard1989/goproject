@@ -42,13 +42,13 @@ func engine() *gin.Engine {
 	apiHandler := handlers.NewApiHandler(httpClient, statis)
 	cmdHandler := handlers.NewCmdHandler(statis)
 	debugHandler := handlers.NewDebugHandler()
-	statisHandler := handlers.NewStatusHandler(statis)
+	statusHandler := handlers.NewStatusHandler(statis)
 
 	engine.GET("/", defaultHandler)
 	engine.POST("/api", apiHandler.Api())
 	engine.GET("/cmd", cmdHandler.Cmd())
 	engine.GET("/debug", debugHandler.Debug())
-	engine.GET("/status", statisHandler.Status())
+	engine.GET("/status", statusHandler.Status())
 
 	engine.NoRoute(func(c *gin.Context) {
 		c.String(http.StatusNotFound, "not found url \n")
