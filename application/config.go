@@ -1,16 +1,15 @@
-package main
+package application
 
 import (
 	"os"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/keyboard1989/goproject/models"
-
 	"github.com/spf13/viper"
 )
 
-var config models.Configuration
-
-func initConfig() {
+func getConfig() *models.Configuration {
+	var config *models.Configuration
 	viper.SetEnvPrefix("goproject")
 	viper.AutomaticEnv()
 
@@ -19,10 +18,17 @@ func initConfig() {
 	viper.SetDefault("conf", "./conf.yml")
 
 	conf := viper.GetString("conf")
+	spew.Dump(conf)
 	file, _ := os.Open(conf)
 	defer file.Close()
 
-	viper.ReadConfig(file)
-
-	viper.Unmarshal(&config)
+	err := viper.ReadConfig(file)
+	if err != nil {
+		panic(err)
+	}
+	err = viper.Unmarshal(&config)
+	if err != nil {
+		panic(err)
+	}
+	return config
 }

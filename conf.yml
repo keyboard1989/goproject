@@ -2,7 +2,7 @@ go_version: 1.7
 
 server:
   addr: 127.0.0.1
-  port: 8090
+  port: 8099
 
 db:
   db_source: root:root123@tcp(127.0.0.1:3306)/adx_api?parseTime=true&charset=utf8&loc=Local
