@@ -72,7 +72,7 @@
 		},
 		{
 			"ImportPath": "github.com/keyboard1989/goutil",
-			"Rev": "b1a22109025d001e927a2f8efd54b6dbb9f9ca0e"
+			"Rev": "42b2fd000b8bcff5720858c5aa0f0b4831dddb7c"
 		},
 		{
 			"ImportPath": "github.com/magiconair/properties",
@@ -146,6 +146,10 @@
 		{
 			"ImportPath": "gopkg.in/yaml.v2",
 			"Rev": "a3f3340b5840cee44f372bddb5880fcbc419b46a"
+		},
+		{
+			"ImportPath": "github.com/keyboard1989/goutil/vendor/github.com/jinzhu/now",
+			"Rev": "42b2fd000b8bcff5720858c5aa0f0b4831dddb7c"
 		}
 	]
 }
