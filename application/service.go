@@ -41,7 +41,7 @@ func (s *Service) Engine() *gin.Engine {
 	engine.GET("/status", statusHandler.Status())
 
 	engine.NoRoute(func(c *gin.Context) {
-		c.String(http.StatusNotFound, "not found url \n")
+		c.String(http.StatusNotFound, "not found url\n")
 	})
 	return engine
 }

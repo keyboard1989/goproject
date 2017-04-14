@@ -4,7 +4,6 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/keyboard1989/goproject/models"
 	"github.com/keyboard1989/goutil"
 )
@@ -16,8 +15,8 @@ type App struct {
 }
 
 func NewApp() *App {
-	config := getConfig()
-	spew.Dump(config)
+	config := GetConfig()
+
 	statis := goutil.NewStatistics(config.Statis.ItemLength, config.Statis.DataLength, config.Statis.TimeFormat, GetTime)
 
 	//初始化发送请求的httpClient
